@@ -1,0 +1,8 @@
+you can coax git to ignore local changes to a file with
+	git update-index --assume-unchanged <file>
+
+don't use 
+	git rm --cached <file> 
+
+because that deletes the file on next pull
+
