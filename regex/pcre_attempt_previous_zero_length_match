@@ -1,0 +1,13 @@
+ seems that it is the case that pcre will just match once and move the engine forward a character
+
+ the section from https://www.regular-expressions.info/zerolength.html                    Advancing After a Zero-Length Regex Match
+ is helpful
+
+ "If it was zero-length, the engine makes note of that, as it must not allow a zero-length match at the same position." <- PCRE tries to do this, but it doesn't do it 100% effectively
+ "The other solution, which is used by Perl, PCRE is to always start the next match attempt at the end of the previous match, regardless of whether it was zero-length or not. "
+
+ see, PCRE re-attempts the match with two flags enabled: NOTEMPTY_ATSTART and ANCHORED, ie. "try again, but only match at the next position and only if it isn't an empty match"
+ this is just a kludge for what the flag should be, which is "make sure the end of the new match has advanced from the end of the previous match" 
+ because PCRE now struggles when \K is used in lookarounds, such as "(?<=^\K.)"
+ and understandably so. Perl doesn't define the behaviour, and PCRE doesn't provide a means to handle it
+
