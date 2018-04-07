@@ -1,0 +1,14 @@
+so you added things to .gitignore that are already being tracked...
+
+go ahead and commit that .gitignore file
+
+then do this from the project root dir
+
+git rm -r --cached . 
+
+-- the things in the git index(cached) will be removed
+-- this doesn't rm your changes
+
+git add .
+
+-- this will re add things that are not being ignored in the .gitignore
