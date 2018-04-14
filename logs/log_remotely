@@ -1,0 +1,7 @@
+what produces said 'log file' on each system?
+you should avoid polling where possible
+
+log4j 2
+
+log4j2 can send log data directly
+because a simple rsyslog/syslog-ng/syslog on a central system would solve this with 10 minutes of effort
