@@ -1,0 +1,9 @@
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	System.out.println(Arrays.toString(((URLClassLoader) AsyncServlet.class.getClassLoader()).getURLs()));
+	System.out.println(AsyncServlet.class.getClassLoader().getResource("someresource.txt"));
+	System.out.println(AsyncServlet.class.getClassLoader().getResource(AsyncServlet.class.getName().replace('.', '/') + ".class"));
+}
+
+[file:/home/x7/dev/Concurrency/out/artifacts/web_war_exploded/WEB-INF/classes/]
+file:/home/x7/dev/Concurrency/out/artifacts/web_war_exploded/WEB-INF/classes/someresource.txt
+file:/home/x7/dev/Concurrency/out/artifacts/web_war_exploded/WEB-INF/classes/servlets/AsyncServlet.class
