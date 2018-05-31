@@ -1,1 +1,11 @@
 Map intellij build project to Ctrl 6 and then rebuild it to have Devtools take effect.
+
+I am guessing you are coding and expect DevTools to auto-magically 
+figure out you have changed something in your project? Devtools does that
+by watching your classpath folder(s). When a .class file (or a resource)
+has changed, devtools take the appopriate action.
+
+
+tldr, update the classpath
+
+-Stephane Nicoll
