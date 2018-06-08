@@ -1,0 +1,21 @@
+in the application.properties file you can do
+
+spring.datasource.url=jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+
+and then in  http://localhost:8080/h2-console/
+page, you can specify the url to be jdbc:h2:mem:test
+
+this will ensure your tables/data ur schema.sql and data.sql insertions to appear
+
+Additionally, some other possible useful props in the future
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2_console
+spring.datasource.url=jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driverClassName=org.h2.Driver
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
