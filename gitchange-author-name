@@ -1,0 +1,1 @@
+git rebase -i  jfajsd9fajsd9f0jasd0fjasdf -x 'git commit --amend --author="Virga(luna) actias <actias@email.com>" --no-edit'
